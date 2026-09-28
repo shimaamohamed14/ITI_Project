@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@model Product
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.ProductId): @Model.ProductId</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Title): @Model.Title</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Price): @Model.Price</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Description): @Model.Description</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Quantity): @Model.Quantity</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.ImagePath): @Model.ImagePath</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Category): @Model.Category.Name</h5>
+
+        <a asp-action="Index" class="btn btn-info">Back To Products</a>
+    </div>
+</div>
+

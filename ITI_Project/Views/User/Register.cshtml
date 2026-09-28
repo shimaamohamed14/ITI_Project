@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+<h1>Register</h1>
+@model User
+
+<form asp-action="Register">
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for ="Email" class="form-control">
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" class="form-control">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Register</button>
+    <p class="mt-3">
+        Already have an account?
+        <a asp-controller="User" asp-action="Login">Login</a>
+    </p>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

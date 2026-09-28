@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+@model Category
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Name): @Model.Name</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(p => p.Description): @Model.Description</h5>
+
+        <a asp-action="Index" class="btn btn-info">Back To Categories</a>
+
+    </div>
+</div>
+

@@ -1,0 +1,80 @@
+﻿@* @{
+    ViewData["Title"] = "AI Inventory Assistant";
+}
+
+<div class="container mt-4">
+
+    <h2>🤖 AI Inventory Assistant</h2>
+
+    <form asp-controller="AI" asp-action="Ask" method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Ask about your inventory</label>
+
+            <input type="text"
+                   name="question"
+                   class="form-control"
+                   placeholder="Example: Which products are low in stock?" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Ask AI
+        </button>
+
+    </form>
+    @if (ViewBag.Answer != null)
+    {
+        <div class="alert alert-info mt-4">
+            <strong>AI:</strong>
+            <p>@ViewBag.Answer</p>
+        </div>
+    }
+
+</div> *@
+
+@{
+    ViewData["Title"] = "AI Inventory Assistant";
+}
+
+<div class="dashboard-card">
+
+    <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="stat-icon icon-purple mb-0">
+            <i class="bi bi-robot"></i>
+        </div>
+
+        <div>
+            <h2 class="card-title mb-1">AI Inventory Assistant</h2>
+            <p class="text-muted mb-0">Ask questions about your products and inventory.</p>
+        </div>
+    </div>
+
+    <form asp-controller="AI" asp-action="Ask" method="post">
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Ask about your inventory</label>
+            <input type="text" name="question" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-stars"></i>
+            Ask AI
+        </button>
+
+    </form>
+
+    @if (ViewBag.Answer != null)
+    {
+        <div class="alert alert-info mt-4">
+
+            <div class="fw-semibold mb-2">
+                <i class="bi bi-robot"></i>
+                AI Answer
+            </div>
+
+            <p class="mb-0">@ViewBag.Answer</p>
+
+        </div>
+    }
+
+</div>
